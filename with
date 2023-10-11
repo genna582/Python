@@ -1,9 +1,6 @@
-with total as (select
-                   year as year,
-                   count(*) as amount
-from sets
-group by year
-)
+-- временная таблица total --
+with total as 
+(select  year as year, count(*) as amount from sets group by year)
 
 select
 total.year,

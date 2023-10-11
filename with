@@ -1,0 +1,13 @@
+with total as (select
+                   year as year,
+                   count(*) as amount
+from sets
+group by year
+)
+
+select
+total.year,
+total.amount,
+sum(total.amount) over (order by year asc)
+from total
+order by year asc
